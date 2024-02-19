@@ -1,0 +1,102 @@
+:root {
+  --font-size-sm: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
+  --font-size-base: clamp(1rem, 0.45vw + 0.89rem, 1.25rem);
+  --font-size-md: clamp(1.2rem, 1.23vw + 0.89rem, 1.88rem);
+  --font-size-lg: clamp(1.44rem, 2.5vw + 0.82rem, 2.81rem);
+
+  --color-background: #efefef;
+  --color-text: #19171b;
+  --color-primary: #d0d1d3;
+  --color-accent: #da007a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  accent-color: var(--color-accent);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  line-height: 1.2;
+  margin: 1em auto;
+  text-align: center;
+  max-width: 40ch;
+  color: var(--color-accent);
+}
+
+p {
+  margin: 1em auto;
+  max-width: 60ch;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  width: min(80rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+fieldset {
+  width: max-content;
+  margin-inline: auto;
+}
+
+.sorted-stream-graph {
+  position: relative;
+}
+
+.sorted-stream-graph > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sorted-stream-graph .axis {
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+}
+
+.sorted-stream-graph .axis line {
+  color: var(--color-primary);
+  stroke-dasharray: 4;
+}
+
+.sorted-stream-graph .stream {
+  --color-path: var(--color-primary);
+  --color-text: var(--color-text);
+}
+
+.sorted-stream-graph .stream__path {
+  fill: var(--color-path);
+  stroke: var(--color-background);
+  stroke-width: 0.5px;
+  mix-blend-mode: multiply;
+  transition: fill 0.2s;
+}
+
+.sorted-stream-graph .stream__text {
+  fill: var(--color-text);
+  transition: fill 0.2s;
+}
+
+.sorted-stream-graph .stream:hover {
+  --color-path: var(--color-accent);
+  --color-text: var(--color-accent);
+}

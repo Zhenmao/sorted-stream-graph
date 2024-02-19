@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorted Stream Graph</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Apple’s Product Revenue (2007-2023)</h1>
+      <p
+        >This is a remake of
+        <a
+          href="https://www.visualcapitalist.com/charted-apples-product-revenue-2007-2023/"
+          target="_blank"
+          >Visual Capitalist’s same-titled graph</a
+        >. A sorted stream graph can be seen as a combination of a stacked area
+        chart and a bump chart. It's primarily used to visualize categorical
+        data over time.</p
+      >
+      <fieldset>
+        <legend>Stack Offset</legend>
+        <input
+          type="radio"
+          name="stackOffset"
+          id="stackOffsetNone"
+          value="stackOffsetNone"
+        />
+        <label for="stackOffsetNone">None</label>
+        <input
+          type="radio"
+          name="stackOffset"
+          id="stackOffsetSilhouette"
+          value="stackOffsetSilhouette"
+          checked
+        />
+        <label for="stackOffsetSilhouette">Silhouette</label>
+        <input
+          type="radio"
+          name="stackOffset"
+          id="stackOffsetExpand"
+          value="stackOffsetExpand"
+        />
+        <label for="stackOffsetExpand">Expanded</label>
+      </fieldset>
+      <figure id="sortedStreamGraph"></figure>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/sorted-stream-graph.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
